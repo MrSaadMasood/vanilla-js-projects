@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MegaProjectVanillaJS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="build.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- navbar for smaller screens containes the logo of the website and the bars icon -->
+      <div class="header">
+        <div
+          class="navbar_for_smaller_screens bg-black w-[100%] max-h-16 p-4 flex justify-between items-center md:hidden transition-max-height duration-500"
+        >
+          <!-- website logo -->
+          <div class="website_logo">
+            <img src="Images/project_logo.png" alt="Logo" />
+          </div>
+          <!-- div for the meny bar in smaller screens that is hidden for the larger screens -->
+          <div class="menu_bar md:hidden">
+            <button class="nav_bar_options">
+              <i class="fa-solid fa-bars fa-lg" style="color: #ffffff"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- menu ottion that is displayed when the bars icon on the smaller screen is clicked -->
+        <div
+          class="menu_options max-h-0 transition-max-height duration-500 bg-black text-white"
+        >
+          <ul class="Options flex flex-col justify-center items-center">
+            <li class="mb-6 mt-3 hover:text-yellow-300">
+              <a href="#stopWatch">Stop Watch</a>
+            </li>
+            <li class="mb-6 hover:text-yellow-300">
+              <a href="#Counter">Counter</a>
+            </li>
+            <li class="mb-6 hover:text-yellow-300">
+              <a href="#Weather">Weather</a>
+            </li>
+            <li class="mb-6 hover:text-yellow-300">
+              <a href="#Lazy">Lazy Load</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- navbar that shows on scrolling up and hides when scrolled down -->
+        <div
+          class="on_scroll_navbar_for_larger hidden fixed md:hidden md:justify-center md:items-center md:max-h-0 md:w-[100%] bg-black lg:hidden lg:justify-center lg:items-center text-lg"
+        >
+          <div class="nav_bar_logo">
+            <button><img src="Images/project_logo_large.png" alt="#home" /></button>
+          </div>
+          <div
+            class="stop_watch_heading md:ml-[20rem] lg:ml-[53rem] text-white hover:text-yellow-300 cursor-pointer"
+          >
+            <p><a href="#stopWatch">Stop Watch</a></p>
+          </div>
+          <div
+            class="counter_heading md:ml-7 lg:ml-10 text-white hover:text-yellow-300 cursor-pointer"
+          >
+            <p><a href="#Counter">Counter</a></p>
+          </div>
+          <div
+            class="async_heading md:ml-7 lg:ml-10 text-white hover:text-yellow-300 cursor-pointer"
+          >
+            <p><a href="#Weather">Weather</a></p>
+          </div>
+          <div
+            class="lazy_random_images_heading md:ml-7 lg:ml-10 text-white hover:text-yellow-300 cursor-pointer"
+          >
+            <p><a href="#Lazy">Lazy Load</a></p>
+          </div>
+        </div>
+
+        <!-- main backgound image to display heading and navbar option -->
+        <div class="main_picture relative">
+          <img src="Images/time.jpg" alt="#" style="max-width: 100%; height: auto" />
+          <div
+            class="heading absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-white font-serif"
+          >
+            <h1
+              class="main_heading sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-center"
+            >
+              Time Is Everything
+            </h1>
+            <p
+              class="random_tagline text-center text-[.5rem] pt-1 sm:pt-2 md:pt-3 lg:pt4 xl:pt-5 sm:text-lg md:text-lg lg:text-1xl xl:text-2xl 2xl:text-3xl"
+            >
+              "Time is the most valuable thing a man can spend"
+            </p>
+          </div>
+
+          <!-- navbar options for larger screens that show on top of the main image -->
+          <!-- they are set using the absolution positoning -->
+          <div
+            class="navbar_for_larger_screens hidden md:absolute md:text-white md:text-lg lg:text-2xl md:top-3 lg:top-7 md:left-3 lg:left-7 md:flex md:justify-center md:items-center"
+          >
+            <div class="nav_bar_logo">
+              <button><img src="Images/project_logo_large.png" alt="#home" /></button>
+            </div>
+            <div
+              class="stop_watch_heading md:ml-[20rem] lg:ml-[53rem] hover:text-yellow-300 cursor-pointer"
+            >
+              <p><a href="#stopWatch">Stop Watch</a></p>
+            </div>
+            <div
+              class="counter_heading md:ml-7 lg:ml-10 hover:text-yellow-300 cursor-pointer"
+            >
+              <p><a href="#Counter">Counter</a></p>
+            </div>
+            <div
+              class="async_heading md:ml-7 lg:ml-10 hover:text-yellow-300 cursor-pointer"
+            >
+              <p><a href="#Weather">Weather</a></p>
+            </div>
+            <div
+              class="lazy_random_images_heading md:ml-7 lg:ml-10 hover:text-yellow-300 cursor-pointer"
+            >
+              <p><a href="#Lazy">Lazy Load</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero_body">
+        <!-- Starting Hero body -->
+
+        <!-- stop watch panel -->
+        <div
+          class="stopwatch bg-amber-100 w-[100%] h-[13rem] md:h-[23rem] lg:h-[30rem] xl:[40rem] flex flex-col justify-center items-center"
+        >
+          <div
+            class="stop_watch_heading text-amber-800 font-bold font-serif text-2xl md:text-5xl lg:text-7xl"
+          >
+            <a href="#" id="stopWatch">Stop Watch</a>
+          </div>
+
+          <!-- setting up stop watch button and counter for start stop and reset -->
+          <div class="stop_watch_function">
+            <!-- stop watch counter for minutes and seconds -->
+            <div
+              class="minutes_seconds_counter p-6 md:p-10 lg:p-20 flex justify-center items-center font-bold"
+            >
+              <div
+                class="minutes bg-black text-white h-[3rem] w-[3rem] md:h-[6rem] md:w-[6rem] lg:h-[9rem] lg:w-[9rem] flex justify-center items-center text-2xl md:text-5xl lg:text-7xl mr-2"
+              >
+                00
+              </div>
+              <div class="colon font-bold text-2xl md:text-5xl lg:text-5xl">
+                :
+              </div>
+              <div
+                class="seconds bg-black text-white h-[3rem] w-[3rem] md:h-[6rem] md:w-[6rem] lg:h-[9rem] lg:w-[9rem] flex justify-center items-center text-2xl md:text-5xl lg:text-7xl ml-2"
+              >
+                00
+              </div>
+            </div>
+
+            <!-- stop watch buttons for start stop and reset -->
+            <div
+              class="stop_watch_buttons flex justify-between items-center font-bold md:justify-center"
+            >
+              <div
+                class="reset border border-black rounded-md p-1 md:p-3 lg:p-5 md:mr-3 lg:mr-5 hover:scale-105 cursor-pointer md:text-xl lg:text-3xl"
+              >
+                <button class="reset_button">Reset</button>
+              </div>
+              <div
+                class="start border border-black rounded-md p-1 md:p-3 lg:p-5 md:mr-3 lg:mr-5 hover:scale-105 cursor-pointer md:text-xl lg:text-3xl"
+              >
+                <button class="start_button">Start</button>
+              </div>
+              <div
+                class="stop border border-black rounded-md p-1 md:p-3 lg:p-5 md:mr-3 lg:mr-5 hover:scale-105 cursor-pointer md:text-xl lg:text-3xl"
+              >
+                <button class="stop_button">Stop</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- counter starts here-->
+        <div
+          class="counter bg-amber-50 w-[100%] h-[13rem] md:h-[23rem] lg:h-[30rem] xl:[40rem] flex flex-col justify-center items-center"
+        >
+          <!-- heading for counter -->
+          <div
+            class="Counter_heading text-amber-600 font-bold font-serif text-2xl md:text-5xl lg:text-7xl"
+          >
+            <a href="#" id="Counter">Counter</a>
+          </div>
+
+          <!-- setting up counter display -->
+          <div class="Counter_function">
+            <div
+              class="counter_display p-6 md:p-10 lg:p-20 flex justify-center items-center font-bold"
+            >
+              <div
+                class="count bg-black text-white h-[3rem] w-[3rem] md:h-[6rem] md:w-[6rem] lg:h-[9rem] lg:w-[9rem] flex justify-center items-center text-2xl md:text-5xl lg:text-7xl ml-2"
+              >
+                00
+              </div>
+            </div>
+
+            <!-- divs for counter buttons -->
+            <div
+              class="counter_buttons flex justify-between items-center font-bold md:justify-center"
+            >
+              <div
+                class="decrease_counter border border-black rounded-md mr-1 p-1 md:p-3 lg:p-5 md:mr-3 lg:mr-5 hover:scale-105 cursor-pointer md:text-xl lg:text-3xl"
+              >
+                <button class="decrease_counter_button">Decrease</button>
+              </div>
+              <div
+                class="reset_counter border border-black rounded-md p-1 mr-1 md:p-3 lg:p-5 md:mr-3 lg:mr-5 hover:scale-105 cursor-pointer md:text-xl lg:text-3xl"
+              >
+                <button class="reset_counter_button">Reset</button>
+              </div>
+              <div
+                class="increase_counter border border-black rounded-md p-1 mr-1 md:p-3 lg:p-5 md:mr-3 lg:mr-5 hover:scale-105 cursor-pointer md:text-xl lg:text-3xl"
+              >
+                <button class="increase_counter_button">Increase</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- weather app start -->
+        <div
+          class="weatherapp bg-amber-100 w-[100%] h-[35rem] md:h-[35rem] lg:h-[40rem] xl:[45rem] flex flex-col justify-center items-center"
+        >
+          <div
+            class="weather_app_heading text-amber-800 font-bold font-serif text-2xl md:text-5xl lg:text-7xl"
+          >
+            <a href="#" id="Weather">Weather Forecast</a>
+          </div>
+          <div
+            class="stop_watch_function flex flex-col justify-center items-center"
+          >
+            <div
+              class="location_seach_bar p-6 md:p-10 lg:p-20 flex justify-center items-center font-bold text-center"
+            >
+              <!-- form for getting the location -->
+              <form action="#" id="location_form">
+                <label for="location" class="label md:text-xl lg:text-2xl"
+                  >Location:</label
+                >
+                <br />
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  placeholder="City Name"
+                  class="input_location w-[8em] md:w-[14rem] lg:w-[18rem] border-black border rounded-lg p-3"
+                  required
+                />
+                <br />
+                <input
+                  type="submit"
+                  class="submit_form text-sm md:text-lg border border-black bg-black text-white rounded-lg p-3 md:p-2 mt-2 hover:scale-105"
+                />
+              </form>
+            </div>
+
+            <!-- displaying weather information basic -->
+
+            <div
+              class="weather_information max-h-52 w-64 md:h-56 md:w-[35rem] lg:h-[19rem] lg:w-[50rem] bg-amber-500 p-3"
+            >
+              <div
+                class="weather_info_main_div text-sm md:text-sm lg:text-md md:flex md:justify-evenly md:items-center lg:flex lg:justify-around lg:items-center md:mt-7 lg:mt-3 transition-max-height"
+              >
+                <div class="weather_heading">
+                  <h2 class="weather_heading font-bold text-md">
+                    Current Weather
+                  </h2>
+                  <p class="Date">DateTime</p>
+
+                  <div
+                    class="temperature flex flex-col justify-center items-center"
+                  >
+                    <button class="temp_converter">
+                      <p class="actualT text-5xl font-bold md:text-5xl">---</p>
+                      <p class="realF">RealFeel ---</p>
+                    </button>
+                  </div>
+                  <p class="conditions">
+                    Partially Cloudy
+                    <span
+                      class="more_weather_detail md:hidden lg:hidden xl:hidden"
+                    >
+                      <button
+                        class="more_detail_button flex justify-center items-center duration-500"
+                      >
+                        <i
+                          class="fa-solid fa-angle-down"
+                          style="color: #080808"
+                        ></i>
+                      </button>
+                    </span>
+                  </p>
+                </div>
+
+                <!-- weather details for smaller screens -->
+                <div
+                  class="weather_heading_small_screen max-h-0 overflow-hidden transition-max-height md:hidden lg:hidden xl:hidden"
+                >
+                  <div
+                    class="weather_attributes_small_screen border-amber-600 border-b-2 p-1"
+                  >
+                    <p class="cloud_cover">
+                      Cloud Cover<span class="cover ml-32">--</span>
+                    </p>
+                  </div>
+                  <div
+                    class="weather_attributes_small_screen border-amber-600 border-b-2 p-1"
+                  >
+                    <p class="humidity">
+                      Humidity<span class="humid ml-36">--</span>
+                    </p>
+                  </div>
+                  <div
+                    class="weather_attributes_small_screen border-amber-600 border-b-2 p-1"
+                  >
+                    <p class="uv_index">
+                      UV Index<span class="UV ml-40">--</span>
+                    </p>
+                  </div>
+                  <div
+                    class="weather_attributes_small_screen border-amber-600 border-b-2 p-1"
+                  >
+                    <p class="Wind_speed">
+                      Wind Speed<span class="wind ml-28">--</span>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- weather information more detailed for larger screens -->
+
+                <div
+                  class="weather_description hidden md:w-72 lg:w-[25rem] sm:hidden md:block lg:block"
+                >
+                  <div
+                    class="weather_attributes border-amber-600 border-b-2 p-1 lg:p-2"
+                  >
+                    <p class="cloud_cover">
+                      Cloud Cover<span class="cover ml-44 lg:ml-72">--</span>
+                    </p>
+                  </div>
+                  <div
+                    class="weather_attributes border-amber-600 border-b-2 p-1 lg:p-2"
+                  >
+                    <p class="humidity">
+                      Humidity <span class="humid ml-44 lg:ml-72">--</span>
+                    </p>
+                  </div>
+                  <div
+                    class="weather_attributes border-amber-600 border-b-2 p-1 lg:p-2"
+                  >
+                    <p class="uv_index">
+                      UV Index<span class="UV ml-52 lg:ml-72">--</span>
+                    </p>
+                  </div>
+                  <div
+                    class="weather_attributes border-amber-600 border-b-2 p-1 lg:p-2"
+                  >
+                    <p class="Wind_speed">
+                      Wind Speed<span class="wind ml-44 lg:ml-[17rem]">--</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- lazy loading of images -->
+      <div
+        class="lazy_images_heading_div h-20 md:h-24 lg:h-32 text-amber-800 bg-amber-50 font-bold font-serif text-2xl md:text-5xl lg:text-7xl flex justify-center items-center"
+      >
+        <h1><a href="#" id="Lazy">Lazy Random Images</a></h1>
+      </div>
+
+      <div
+        class="lazy_main_container bg-amber-50 w-[100%] h-[35rem] md:h-[35rem] lg:h-[44rem] xl:[49rem] flex flex-col justify-center items-center"
+      >
+        <div
+          class="lazy_middle_container w-[80%] lg:w-[95%] flex flex-col items-center overflow-y-auto"
+          id="lazy_middle"
+        >
+          <div
+            class="lazy_inner_container grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 lg:gap-10"
+          >
+            <!-- grid items for diplaing extra information -->
+            <div
+              class="grid_item h-60 w-72 md:h-64 md:w-80 overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 hidden md:block lg:block xl:block overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 hidden md:block lg:block xl:block overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 hidden md:block lg:block xl:block overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 hidden md:hidden lg:block xl:block overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 hidden md:hidden lg:block xl:block overflow-hidden"
+            ></div>
+            <div
+              class="grid_item bg-amber-500 h-60 w-72 md:h-64 md:w-80 hidden md:hidden lg:block xl:block overflow-hidden"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- designing the footer for links and ownership -->
+    <footer>
+      <div
+        class="footer h-72 w-[100%] bg-amber-700 flex justify-center items-center"
+      >
+        <ul
+          class="footer_list text-white flex flex-col justify-center items-center text-lg md:text-xl lg:text-2xl"
+        >
+          <li>Created By: Saad Masood</li>
+          <li class="mt-5 md:mt7 lg:mt-9">
+            <a
+              href="https://www.linkedin.com/in/saad-masood-8b100125b/"
+              target="_blank"
+              ><i
+                class="fa-brands fa-linkedin fa-2xl"
+                style="color: #ba9b2c"
+              ></i
+            ></a>
+          </li>
+          <li class="mt-5 md:mt7 lg:mt-9">
+            <a href="https://github.com/MrSaadMasood" target="_blank"
+              ><i class="fa-brands fa-github fa-2xl" style="color: #ba9b2c"></i
+            ></a>
+          </li>
+          <li class="mt-5 md:mt7 lg:mt-9 text-sm">Copyrights Reserved</li>
+        </ul>
+      </div>
+    </footer>
+    <script src="StopWatch.js"></script>
+    <script src="Counter.js"></script>
+    <script src="Weather.js"></script>
+    <script src="lazyload.js"></script>
+    <script src="navbar.js"></script>
+  </body>
+</html>
