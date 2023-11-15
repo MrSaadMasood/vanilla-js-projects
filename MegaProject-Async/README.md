@@ -23,7 +23,7 @@
 MegaProjectVanillaJS is a web application built from scratch using HTML, tailwind CSS, and Vanilla JavaScript. The project includes a variety of features such as a stop watch, counter, weather forecast, and lazy loading of random images.
 
 ## Screenshots
-![main-page](/Screenshots/scrnli_15_11_2023_15-16-40.png)
+![main-page](https://github.com/MrSaadMasood/vanilla-js-projects/blob/main/MegaProject-Async/Screenshots/scrnli_15_11_2023_15-16-40.png?raw=true)
 
 ## Features <a name="features"></a>
 
