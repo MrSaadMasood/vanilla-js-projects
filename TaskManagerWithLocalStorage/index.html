@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link to an external CSS file for styling -->
+    <link rel="stylesheet" href="/build.css">
+</head>
+<body>
+    <!-- The main container for your web page -->
+    <div class="div container">
+
+        <!-- Navigation bar -->
+        <div class="navbar flex justify-start items-center bg-center h-14 bg-white">
+            <!-- Task Manager button -->
+            <div class="taskManager font-bold ml-20 border border-black p-2
+            rounded-lg hover:scale-105
+             hover:border-yellow-400 cursor-pointer">Tasks</div>
+        </div>
+
+        <!-- Tasks Manager -->
+        <div class="main_interface h-screen w-screen bg-gray-400 flex flex-col justify-center items-center">
+            <!-- Add button for tasks -->
+            <div class="add_task_button relative bottom-4 right-[30rem]">
+                <button class="completed bg-white p-6 rounded-lg hover:scale-105 font-bold">Add Tasks</button>
+            </div>
+
+            <!-- Task information form (hidden by default) -->
+            <div class="task_input_form hidden h-[35rem] w-[40rem] bg-white rounded-[2rem] shadow-lg shadow-gray-500 justify-center items-center">
+                <div class="form">
+                    <form action="index.html" id="task_information_form">
+                        <!-- Task Name input field -->
+                        <label for="taskName" class="font-bold text-lg">Enter the Task Name:</label>
+                        <br>
+                        <input type="text" class="border rounded-xl border-gray-300 p-4 w-96 mb-4" 
+                        id="taskName" name="taskName" placeholder="Task Name" value="" required>
+                        <br>
+                        <!-- Task Description textarea -->
+                        <label for="taskDescription" class="font-bold text-lg">Enter the Description:</label>
+                        <br>
+                        <textarea name="taskDescription" id="taskDescription" class="TD border rounded-xl border-gray-300 w-96 p-4 mb-1 relative" cols="30" rows="8" 
+                        placeholder="Task Description" required></textarea>
+                        <br>
+                        <!-- Submit and Cancel buttons -->
+                        <input type="submit" class="submit_button p-4 bg-gray-400 rounded-xl hover:scale-105">
+                        <button type="cancel" class="cancel p-4 bg-gray-400 rounded-xl hover:scale-105 ml-2">Cancel</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Task description box (hidden by default, activated when a task name is clicked) -->
+            <div class="showDescription bg-white h-[30rem] w-[30rem] rounded-3xl shadow-gray-200 hidden flex-col justify-center
+            items-center">
+            </div>
+
+            <!-- Existing Tasks Manager -->
+            <div class="manager bg-white h-[70%] w-[70%]  grid grid-cols-1 gap-2 shadow-2xl
+             shadow-gray-500 auto-rows-2fr overflow-auto">
+                <!-- Header for the tasks table -->
+                <div class="grid_item_1 bg-slate-300 flex justify-start items-center">
+                    <!-- Name column header -->
+                    <div class="status_heading">
+                        <p class="status text-3xl ml-8 mr-80">
+                            Name
+                        </p>
+                    </div>
+                    <!-- Status column header -->
+                    <div class="name_heading">
+                        <p class="name text-3xl mr-64">
+                            Status
+                        </p>
+                    </div>
+                    <!-- Delete column header -->
+                    <div class="delete_heading">
+                        <p class="delete text-3xl">
+                            Delete
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Link to an external JavaScript file -->
+    <script src="/taskManager.js"></script>
+</body>
+</html>
