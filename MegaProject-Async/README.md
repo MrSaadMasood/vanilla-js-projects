@@ -25,6 +25,16 @@ MegaProjectVanillaJS is a web application built from scratch using HTML, tailwin
 ## Screenshots
 ![main-page](https://github.com/MrSaadMasood/vanilla-js-projects/blob/main/MegaProject-Async/Screenshots/scrnli_15_11_2023_15-16-40.png?raw=true)
 
+![stop-watch](https://github.com/MrSaadMasood/vanilla-js-projects/blob/main/MegaProject-Async/Screenshots/scrnli_15_11_2023_15-18-58.png?raw=true)
+
+![counter](https://github.com/MrSaadMasood/vanilla-js-projects/blob/main/MegaProject-Async/Screenshots/scrnli_15_11_2023_15-19-02.png?raw=true)
+
+![weather](https://github.com/MrSaadMasood/vanilla-js-projects/assets/144701669/96405820-ce8c-4dd0-b7e3-2b2ae6a6c32a)
+
+![lazy-load](https://github.com/MrSaadMasood/vanilla-js-projects/blob/main/MegaProject-Async/Screenshots/scrnli_15_11_2023_15-19-09.png?raw=true)
+
+![footer](https://github.com/MrSaadMasood/vanilla-js-projects/blob/main/MegaProject-Async/Screenshots/scrnli_15_11_2023_15-19-12.png?raw=true)
+
 ## Features <a name="features"></a>
 
 - **Responsive Design:** The application is designed to be responsive, ensuring a seamless user experience across different devices.
