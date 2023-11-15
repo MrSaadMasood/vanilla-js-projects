@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+a{
+    text-decoration-line: none;
+    color: white;
+}
+
+.container{
+    height: 800px;
+    width: 100%;
+    background-image: url(Images/Libray.jpg);
+    background-size: cover;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inner_container_1{
+    height: 4rem;
+    width: 30rem;
+    border-radius: 1rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 5rem;
+}
+
+.inner_container_2{
+    height: 20rem;
+    width: 35rem;
+    border-radius: 2rem;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 3rem;
+}
+.quote_container{
+    height: 8rem;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quote{
+ font-size: 1.5rem;
+}
+.person{
+    font-size: 1.2rem;
+    color: brown;
+    margin-top: 1rem;
+}
+button{
+    height: 3rem;
+    width: 7rem;
+    border-radius: .5rem;
+    background-color: black;
+    color: white;
+
+    margin-top: 1.5rem;
+
+}
+button:hover{
+    animation-name: size;
+    animation-duration: .05s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes size{
+    from { transform: scale(1);}
+    to { transform: scale(1.05);}
+}
